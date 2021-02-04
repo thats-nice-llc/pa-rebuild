@@ -4,13 +4,13 @@ We run a digital trade magazine for the pharmaceutical industry. Our clients can
 ## Deliverable
 We need a PHP/Laravel developer who can build the back end and scaffold out a basic front end of a refresh of our current website. We would like to achieve the following goals:
 
-• A CMS that is customized for our article/ad structure.
-• Articles that can easily be edited and managed by copy writers and non-technical people.
-• Impression tracking needed for all articles, ads and pages.
-• Article and page search
-• Well-defined user roles such as Author, Client, Admin, etc...
-• A dashboard for our editors to control banner ads on the website.
-• A client-facing dashboard where the client can view impressions related only to their company.
+- A CMS that is customized for our article/ad structure.
+- Articles that can easily be edited and managed by copy writers and non-technical people.
+- Impression tracking needed for all articles, ads and pages.
+- Article and page search
+- Well-defined user roles such as Author, Client, Admin, etc...
+- A dashboard for our editors to control banner ads on the website.
+- A client-facing dashboard where the client can view impressions related only to their company.
 
 We are leaning toward Twill or Statamic for the CMS and Matomo (formerly Piwik) for analytics, but are open to any suggestions. We don't know much about CraftCMS, but we are open to it if you think it may suit our needs and have a strong argument for it. We want something very simple for our writers to use. Drag and drop editing for customization of pages would be ideal, which is why are leaning toward Twill and Statamic. We don't need it to be like a Word document, but we want content editing that can make custom articles easily achievable. This isn't a requirement, but if you have strong ideas on how this could be implemented, it would put you at the top of our list.
 
