@@ -1,0 +1,42 @@
+<script>
+      $.ajax({
+        url: API_PATH + "/v2/Company/" + data.company.Id + "/CompanySectorsExpanded",
+        headers: {
+          "Authorization": UserAccount.getMyAuthToken(),
+          "sourcepage": sourcePage
+        },
+        type: "GET",
+        success: function(data) {
+
+          let result = data.reduce((x, data) => {
+            x[data.IndustryName] = x[data.IndustryName] || {};
+            x[data.IndustryName][data.Group] = x[data.IndustryName][data.Group] || {};
+            x[data.IndustryName][data.Group][data.Name] = data.Name;
+            return x;
+          }, {});
+          
+          var $baseHTML = $("<ul>", {id: "servicesList", "class": "checkbox-list"});
+          Object.keys(result).forEach(industry => {
+            var $industryLabel = $("<span>").html( 'Services/Capabilities<div class="company-industry"><div class="industry-color-1">' + industry + '</div></div>' );
+            var $industryInner = $("<li>").html($industryLabel);
+            var $groupListOuter = $("<ul>", {'class':'sector-checkbox-list'});
+            Object.keys(result[industry]).forEach(group => {
+              var $groupLabel = $("<span>").html(group);
+              var $groupListInner = $("<li>");
+              $groupListInner.append($groupLabel);
+              var $groupListInnerGroup = $("<ul>");
+              Object.keys(result[industry][group]).forEach(name => {
+                $groupListInnerGroup.append('<li><span>' + name + '</span></li>');
+              });
+              $groupListInner.append($groupListInnerGroup);
+              $groupListOuter.append($groupListInner);
+              $industryInner.append($groupListOuter);
+            });
+            $baseHTML.append($industryInner);
+          });
+          console.log($baseHTML.prop('outerHTML'));
+        },
+        error: function(data) {
+          console.log("Failed to get company services", data);
+        }
+      });

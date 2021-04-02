@@ -11,7 +11,7 @@ We need a PHP/Laravel developer who can build the back end and scaffold out a ba
 - Well-defined user roles such as Author, Client, Admin, etc...
 - A dashboard for our editors to control banner ads on the website.
 - A client-facing dashboard where the client can view impressions related only to their company.
-- A portal where we can send links to conduct surveys to add companies or update company profile information (address, # of employees, revenue, bio, services/capabilities, etc...). This would see the company fill out a quick survey and the answers would either update their information or create a new company that can be tied to ads/articles.
+- A portal where we can send a link to conduct surveys to add companies or update company profile information (address, # of employees, revenue, bio, services/capabilities, etc...).
 
 Nice to haves, but not deal breakers:
 
